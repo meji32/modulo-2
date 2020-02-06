@@ -110,7 +110,6 @@
 
 // function colors(myColor) {
 // 	console.log( '"' + myColor.join('", "') + '"' )
-=======
 //Exercise 1: Create an array with all the names of your class (including mentors).  Sort the array alphabetically.  Print the first element of the array in the console.  Print the last element of the array in the console.  Print all the elements of the array in the console.  Use a "for" loop. 
 
 // var i
@@ -224,3 +223,13 @@
 // function colors(myColor) {
 // 	console.log( '"' + myColor.join('", "') + '"' )
 // }colors( myColor )
+
+let republicans = 0
+let members = data.results[0].members
+members.forEach(stats =>{
+	for (i=0; i < members.length; i++) {
+		if(republicans.indexOf(member.party("R"))!=-1){
+		republicans++
+		}
+	}
+})

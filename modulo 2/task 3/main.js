@@ -1,4 +1,5 @@
 let members = data.results[0].members
+
 function createTable (){
 let tbody = document.querySelector("tbody")
 tbody.innerHTML = ""
@@ -40,8 +41,3 @@ if(stateFilter.indexOf(e.state)==-1)
 for(let i=0; i< stateFilter.length;i++)
 	document.querySelector("select").innerHTML += `<option value=${stateFilter[i]}> ${stateFilter[i]}</option>`
 createTable();
-
-function createStats(){
-let numberReps = document.querySelector("numberReps")
-numberReps.innerHTML=""
-}
