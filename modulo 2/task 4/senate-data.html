@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Senators</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/672e10456a.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="d-flex justify-content-between p-2">
+      <div>            
+        <a href="index.html"><img id="lupa" alt="lupa" src="images/logo.png" class="mb-4" width="70"></a>
+        <a class="display-4"href="index.html">TGIF</a> 
+      </div>
+      <h4 class="mr-5 mt-4"><i class="far fa-envelope"></i><a class="ml-1" href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment">info@tgif.net</a></h4>  
+    </header>
+    <nav>
+      <div class="d-flex flex-row p-1 ml-2 mr-2 bg-light border border-dark">
+        <div class="p-2">
+          <button class="btn btn-secondary" type="button"><a href="index.html">Home</a></button>
+        </div>
+        <div class="p-2">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#">Congress 113<a/></button>
+          <div class="dropdown-menu ml-5" aria-labelledby="dropdownMenuButton">
+            <h4 class="text-center"><a class="dropdown-item" href="house-data.html">House</a></h4>
+            <h4 class="text-center"><a class="dropdown-item" href="senate-data.html">Senate</a></h4>
+          </div>
+        </div>
+        <div class="p-2">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="AttendanceButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#">Attendance</a></button>
+          <div class="dropdown-menu ml-5" aria-labelledby="AttendanceButton">
+            <h4 class="text-center"><a class="dropdown-item" href="house-attendance.html">House</a></h4>
+            <h4 class="text-center"><a class="dropdown-item" href="senate-attendance.html">Senate</a></h4>
+          </div>
+        </div>
+        <div class="p-2">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="LoyaltyButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#">Party Loyalty</a></button>
+          <div class="dropdown-menu ml-5" aria-labelledby="LoyaltyButton">
+            <h4 class="text-center"><a class="dropdown-item" href="house-loyalty.html">House</a></h4>
+            <h4 class="text-center"><a class="dropdown-item" href="senate-loyalty.html">Senate</a></h4>
+          </div>
+        </div>
+      </div>
+    </nav>     
+    <div class=" container" >
+      <div class="p-3">
+        <h2>Senators</h2>
+          <p ><blockquote class="text-justify">First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</blockquote></p>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div>
+          <label><input type="checkbox" name="party" value="R" checked>Republican</label>
+          <label><input type="checkbox" name="party" value="D" checked>Democrat</label>
+          <label><input type="checkbox" name="party" value="I" checked>Independent</label>
+        </div>
+        <div>
+          <label class="mr-2">State:</label><select></select>
+        </div>
+      </div>
+      <table class="container jumbotron table table-hover table-condensed" id="senate-data">
+        <thead>
+          <tr>
+            <th class=" text-center">Name</th>
+            <th class=" text-center">Party Affilication</th>
+            <th class="text-center">State</th>
+            <th class=" text-center">Years in office</th>
+            <th class=" text-center">% Votes w/party</th>
+          </tr>
+        </thead>
+        <tbody class="text-center"></tbody>
+        </table>
+    	</div>
+    <footer>
+      <div class="dropdown m-2 bg-light border border-dark">
+        <p class="text-center">© 2020 TGIF | All Right Reserved</p>
+      </div>
+    </footer>    
+    <!-- <script src="js/pro-congress-113-senate.js"></script> -->
+    <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  </body>
+</html>
