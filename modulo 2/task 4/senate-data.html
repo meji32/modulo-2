@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/672e10456a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
     <header class="d-flex justify-content-between p-2">
@@ -48,29 +49,30 @@
         <h2>Senators</h2>
           <p ><blockquote class="text-justify">First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</blockquote></p>
       </div>
-      <div class="d-flex justify-content-between">
-        <div>
-          <label><input type="checkbox" name="party" value="R" checked>Republican</label>
-          <label><input type="checkbox" name="party" value="D" checked>Democrat</label>
-          <label><input type="checkbox" name="party" value="I" checked>Independent</label>
+      
+        <div class="d-flex justify-content-between">
+          <div>
+            <label><input type="checkbox" name="party" value="R" checked>Republican</label>
+            <label><input type="checkbox" name="party" value="D" checked>Democrat</label>
+            <label><input type="checkbox" name="party" value="I" checked>Independent</label>
+          </div>
+          <div>
+            <label class="mr-2">State:</label><select></select>
+          </div>
         </div>
-        <div>
-          <label class="mr-2">State:</label><select></select>
-        </div>
-      </div>
-      <table class="container jumbotron table table-hover table-condensed" id="senate-data">
-        <thead>
-          <tr>
-            <th class=" text-center">Name</th>
-            <th class=" text-center">Party Affilication</th>
-            <th class="text-center">State</th>
-            <th class=" text-center">Years in office</th>
-            <th class=" text-center">% Votes w/party</th>
-          </tr>
-        </thead>
-        <tbody class="text-center"></tbody>
-        </table>
-    	</div>
+        <table class="container jumbotron table table-hover table-condensed" id="senate-data">
+          <thead>
+            <tr>
+              <th class=" text-center">Name</th>
+              <th class=" text-center">Party Affilication</th>
+              <th class="text-center">State</th>
+              <th class=" text-center">Years in office</th>
+              <th class=" text-center">% Votes w/party</th>
+            </tr>
+          </thead>
+          <tbody class="text-center"></tbody>
+          </table>
+      
     <footer>
       <div class="dropdown m-2 bg-light border border-dark">
         <p class="text-center">© 2020 TGIF | All Right Reserved</p>

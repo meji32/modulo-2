@@ -1,6 +1,5 @@
 let title = document.querySelector("title").text
 
-
 if (title=="Senators") {
 	var url = "https://api.propublica.org/congress/v1/113/senate/members.json"
 	var init = {
@@ -23,7 +22,6 @@ if (title=="Senators") {
 
 let members
 
-
 		async function getData(url,init){
 			await fetch(url, init)
 			.then(function(res){
@@ -33,7 +31,6 @@ let members
 					throw new Error(res.status)
 				}
 			})
-
 			.then(function(json){
 				let data = json
 				members= data.results[0].members
@@ -42,7 +39,6 @@ let members
 				if(stateFilter.indexOf(e.state)==-1)
 					stateFilter.push(e.state)
 				})
-
 				for(let i=0; i< stateFilter.length;i++)
 					document.querySelector("select").innerHTML += `<option value=${stateFilter[i]}> ${stateFilter[i]}</option>`
 					createTable()
@@ -50,7 +46,6 @@ let members
 			.catch(function(error){
 				console.log(error)
 			})
-			
 		}
 
 getData(url,init)
@@ -81,11 +76,10 @@ members.forEach(member =>{
 	}
 	})
 
-
 const checkEvent = document.querySelectorAll("input[name=party]")
 checkEvent.forEach(e =>{e.addEventListener("change",createTable)})
 const selectEvent = document.querySelector("select")
 selectEvent.addEventListener("change",createTable)
 
-
 }
+
