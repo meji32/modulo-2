@@ -64,24 +64,24 @@
                     </thead>
                     <tbody class="tbody1">
                         <tr>
-                          <td>{{parties[0]}}</td> 
-                          <td>{{n_rep}}</td> 
-                          <td>{{total_rep.toFixed(2)}} %</td>
+                          <td class="text-center">{{parties[0]}}</td> 
+                          <td class="text-center">{{n_rep}}</td> 
+                          <td class="text-center">{{total_rep.toFixed(2)}} %</td>
                         </tr>
                         <tr>
-                            <td>{{parties[1]}}</td>
-                            <td>{{n_dem}}</td>
-                            <td>{{total_dem.toFixed(2)}} %</td>
+                            <td class="text-center">{{parties[1]}}</td>
+                            <td class="text-center">{{n_dem}}</td>
+                            <td class="text-center">{{total_dem.toFixed(2)}} %</td>
                         </tr>
                         <tr>
-                            <td>{{parties[2]}}</td>
-                            <td>{{n_ind}}</td>
-                            <td>{{total_ind.toFixed(2)}} %</td>
+                            <td class="text-center">{{parties[2]}}</td>
+                            <td class="text-center">{{n_ind}}</td>
+                            <td class="text-center">{{total_ind.toFixed(2)}} %</td>
                         </tr>
                         <tr>
-                            <td>TOTAL</td>
-                            <td>{{total}}</td>
-                            <td>{{prom_per.toFixed(2)}} %</td>
+                            <td class="text-center">TOTAL</td>
+                            <td class="text-center">{{total}}</td>
+                            <td class="text-center">{{prom_per.toFixed(2)}} %</td>
                         </tr>
                     </tbody>
                 </table>
@@ -100,9 +100,9 @@
                     </thead>
                     <tbody class="tbody2">
                         <tr v-for="mostAttendance in mostAttendance">
-                            <td><a :href="mostAttendance.url">{{mostAttendance.first_name}} {{mostAttendance.last_name}}</a></td>
-                            <td>{{mostAttendance.missed_votes}}</td>
-                            <td>{{(mostAttendance.missed_votes_pct).toFixed(2)}}  %</td>
+                            <td class="text-center"><a :href="mostAttendance.url">{{mostAttendance.first_name}} {{mostAttendance.last_name}}</a></td>
+                            <td class="text-center">{{mostAttendance.missed_votes}}</td>
+                            <td class="text-center">{{(mostAttendance.missed_votes_pct).toFixed(2)}}  %</td>
                         </tr>
                     </tbody>
                 </table>
@@ -119,9 +119,9 @@
                     </thead>
                     <tbody class="tbody3">
                         <tr v-for="leastAttendance in leastAttendance">
-                        <td><a :href="leastAttendance.url">{{leastAttendance.first_name}} {{leastAttendance.last_name}}</a></td>
-                        <td>{{leastAttendance.missed_votes}}</td>
-                        <td>{{(leastAttendance.missed_votes_pct).toFixed(2)}}  %</td>
+                        <td class="text-center"><a :href="leastAttendance.url">{{leastAttendance.first_name}} {{leastAttendance.last_name}}</a></td>
+                        <td class="text-center">{{leastAttendance.missed_votes}}</td>
+                        <td class="text-center">{{(leastAttendance.missed_votes_pct).toFixed(2)}}  %</td>
                         </tr>
                     </tbody>
                 </table>
@@ -133,8 +133,7 @@
           </div>
         </footer>
     </div>
-<!--         <script src="js/pro-congress-113-senate.js"></script>
- -->        <script src="js/statistics.js"></script>
+         <script src="js/statistics.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
