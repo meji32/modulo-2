@@ -9,10 +9,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
+    <div id="app" class="container_fluid">
     <header class="d-flex justify-content-between p-2">
       <div>            
         <a href="index.html"><img id="lupa" alt="lupa" src="images/logo.png" class="mb-4" width="70"></a>
-        <a class="display-4"href="index.html">TGIF</a> 
+        <a class="display-4" href="index.html">TGIF</a> 
       </div>
       <h4 class="mr-5 mt-4"><i class="far fa-envelope"></i><a class="ml-1" href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment">info@tgif.net</a></h4>  
     </header>
@@ -22,7 +23,7 @@
           <button class="btn btn-secondary" type="button"><a href="index.html">Home</a></button>
         </div>
         <div class="p-2">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#">Congress 113<a/></button>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#">Congress 113</a></button>
           <div class="dropdown-menu ml-5" aria-labelledby="dropdownMenuButton">
             <h4 class="text-center"><a class="dropdown-item" href="house-data.html">House</a></h4>
             <h4 class="text-center"><a class="dropdown-item" href="senate-data.html">Senate</a></h4>
@@ -52,12 +53,15 @@
       
         <div class="d-flex justify-content-between">
           <div>
-            <label><input type="checkbox" name="party" value="R" checked>Republican</label>
-            <label><input type="checkbox" name="party" value="D" checked>Democrat</label>
-            <label><input type="checkbox" name="party" value="I" checked>Independent</label>
-          </div>
-          <div>
-            <label class="mr-2">State:</label><select></select>
+            <form>
+            <label v-for="party in test(members,'party')"><input type="checkbox" name="party" :value="party" v-model="parties">{{party}}</label>
+          </form>
+          <form onsubmit="return false" class="form-check form-check-inline">
+            <select v-model="stateAct">
+              <option value="All">All</option>
+              <option :value="state" v-for="state in states">{{state}}</option>
+            </select>
+          </form>
           </div>
         </div>
         <table class="container jumbotron table table-hover table-condensed" id="senate-data">
@@ -70,18 +74,26 @@
               <th class=" text-center">% Votes w/party</th>
             </tr>
           </thead>
-          <tbody class="text-center"></tbody>
+          <tbody class="text-center">
+            <tr v-for="member in filter">
+              <td><a target="_blank" :href=member.url>{{member.first_name}} {{member.last_name}}</a></td>
+              <td>{{member.party}}</td>
+              <td>{{member.state}}</td>
+              <td>{{member.seniority}}</td>
+              <td>{{member.votes_with_party_pct}} %</td>
+            </tr>
+          </tbody>
           </table>
       
-    <footer>
-      <div class="dropdown m-2 bg-light border border-dark">
+    <footer class="dropdown m-2 bg-light border border-dark">
         <p class="text-center">© 2020 TGIF | All Right Reserved</p>
-      </div>
-    </footer>    
-    <!-- <script src="js/pro-congress-113-senate.js"></script> -->
-    <script src="js/main.js"></script>
+      </footer>    
+    </div>
+
+  </div>
+    <script src="js/currency.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
