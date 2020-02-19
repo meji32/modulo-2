@@ -51,15 +51,15 @@ const app = new Vue({
 				app.total = app.n_dem + app.n_rep + app.n_ind
 				app.total_per=	app.total_dem + app.total_rep + app.total_ind
 				app.n_ind != 0 ? app.prom_per = app.total_per / 3 : app.prom_per = app.total_per / 2
-				app.leastAttendance = app.tenPct(app.members,"votes_with_party_pct",false)
-				app.mostAttendance = app.tenPct(app.members,"votes_with_party_pct",true)
+				app.leastAttendance = app.tenPct(app.members,"missed_votes_pct",true)
+				app.mostAttendance = app.tenPct(app.members,"missed_votes_pct",false)
 				app.leastLoyal = app.tenPct(app.members,"votes_with_party_pct",false)
 				app.mostLoyal = app.tenPct(app.members,"votes_with_party_pct",true)
 			})
 			.catch(function(error){
 				console.log(error)
 			})
-		},
+	},
 	methods:{
 		test(array,key){
 			let result = []
@@ -77,34 +77,29 @@ const app = new Vue({
 			app[key2] /= sum
 			return sum
 		},
-        tenPct(array,key,isAscendent){
-                let result
-                let i
-                let aux = isAscendent ? 
-                            [...array].sort((a,b) => a[key] - b[key]) 
-                        : 
-                            [...array].sort((a,b) => b[key] - a[key])
-                
-                let tenPct = parseInt(aux.length*0.1)
+        tenPct(array,key,boolean){
+                let pre_result = array.filter(e => e.total_votes > 0)
+                	.sort(function(a,b){
+                		return a[key] - b[key]
+                	})
+                	let prc = Math.round(pre_result.length*0.1)
 
-                result = aux.slice(0,tenPct)
+                	if (boolean){
+                		pre_result.reverse()
+                	}
+                	let result = pre_result.slice(0,prc)
 
-
-                i = result.length
-
-                while(aux[i][key] == result[result.length - 1][key] && i < aux.length){
-                    result.push(aux[i])
-                    i++
-                }
-
-                return result
-
-            }
+                	while (pre_result[prc][key] == pre_result[prc + 1][key]){
+                		prc+=1
+                		result.push(pre_result[prc])
+                	}
+                	return result 
+		},
 	},
 	computed:{
 		filter(){
 			return this.members.filter(e => app.parties.includes(e.party) && (e.state == app.stateAct || app.stateAct == "All"))
 		}
-	},
-	})
+	}
+})
 
